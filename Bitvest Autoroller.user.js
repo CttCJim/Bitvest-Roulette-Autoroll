@@ -1,17 +1,39 @@
 // ==UserScript==
 // @name         BV Roulette Autoroll
 // @namespace    go
-// @version      1.0
+// @version      1.1
 // @description  Autoroll roulette when scroll lock is toggled
 // @author       CttCJim
 // @match      https://bitvest.io/*
 // @grant        none
+
 // ==/UserScript==
 
 (function() {
     'use strict';
     var started = false;
     var TMbutton = document.querySelector('.roulette .spin.green');
+    //add button to page
+    var newButton = document.createElement('button');
+    newButton.id = "CttCJim_roulbet";
+    //newButton.style.color="
+    newButton.textContent = 'Start Autobet';
+    $(newButton).addClass('green');
+    $(newButton).click(toggleRoulBet);
+    $(".game.roulette").append(newButton);
+    function toggleRoulBet() {
+        started = !started;
+        if(started) {
+            $("#CttCJim_roulbet").removeClass('green');
+            $("#CttCJim_roulbet").addClass('red');
+            $("#CttCJim_roulbet")[0].textContent="Stop Autobet";
+        }else{
+            $("#CttCJim_roulbet").addClass('green');
+            $("#CttCJim_roulbet").removeClass('red');
+            $("#CttCJim_roulbet")[0].textContent="Start Autobet";
+        }
+    }
+    /*
     document.addEventListener('keyup', function (event) {
         if (event.defaultPrevented) {
             return;
@@ -23,7 +45,7 @@
             //doWhateverYouWantNowThatYourKeyWasHit();
             started = !started;
         }
-    });
+    });*/
 
     setInterval(
         function(){
