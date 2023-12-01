@@ -2,7 +2,7 @@
 // @name         BV Roulette Autoroll
 // @namespace    go
 // @version      1.1
-// @description  Autoroll roulette when scroll lock is toggled
+// @description  Autoroll roulette when button is toggled
 // @author       CttCJim
 // @match      https://bitvest.io/*
 // @grant        none
