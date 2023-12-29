@@ -76,30 +76,7 @@
         //start history monitor
         window.roulJim_beforebet = null;
         roulJim_dobet();
-        /*window.roulBetCycle = setInterval(()=>{
-            console.log("cycle start");
-            if($(".roulette .bet-history").html()==window.roulJim_beforebet) { //waiting for bet to change
-                console.log("wait for bet to finish");
-            } else { //bet complete (or initialized)
-                if(window.roulJim_go==false) {
-                    console.log("stopping interval for roulJim_go" +window.roulJim_go);
-                    clearInterval(window.roulBetCycle);
-                    roulJim_stopbets(); //to reset the displays
-                } else {
-                    //keep going
-                    console.log("Making a bet...");
-                    window.roulJim_beforebet = $(".roulette .bet-history").html();
-                    TMbutton.click();
-                    //increment counter
-                    window.roulJim_count++;
-                    $("#CttCJim_roulbetsMade").html(window.roulJim_count);
-                    var betsToMake = $("#CttCJim_roulbetsTarget").val();
-                    if(!isNaN(betsToMake)) {
-                        if((betsToMake==window.roulJim_count)&&(betsToMake>0)) {window.roulJim_go=false;}
-                    }
-                }
-            }
-        },200);*/
+       
     }
     $("#CttCJim_roulbet").click(roulJim_startbets);
     function roulJim_stopbets() {
